@@ -13,7 +13,7 @@
 ### Basic Git
 1. `git --version` # git version 2.X.X
 2. `git config --global user.name "Alex :)"` # Replace what's in the quotes with your name
-3. `git config --global user.email "mattan@onemonth.com"` # Replace what's in the quotes with your email
+3. `git config --global user.email "alex@google.com"` # Replace what's in the quotes with your email
 4. `git init` # You only you do this once in the beginning of every new project
 5. `git status` # Shows you what files you are tracking (or not tracking)
 6. `git add -A` # Add all files to stage
