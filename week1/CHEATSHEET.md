@@ -1,4 +1,4 @@
-## Week 0 Cheatsheet
+## Week 1 Cheatsheet
 
 ### Init new rails app
 1. `rails new your_new_app_name` # A new Rails app is created
