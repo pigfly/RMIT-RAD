@@ -52,5 +52,49 @@ Goodbye, Alex!
 ---
 
 ### Ruby - String
+- basic
+    - `text = String.new`
+    - `text.empty?`
+    - `text.length`
+- concate
+    - ` “Hello,” “ “ “Alex” “!”`
+    - `“Hello,” + “ “ + “Alex” + “!”`
+    - `“Hello, “ <<  “Alex!”`
+    - `“Hello, “.concat “Alex!”`
+- access
+    - `line = “A horse! a horse! my kingdom for a horse!”`
+    - `line[18, 23]  => “my kingdom for a horse!`
+    - `line.index(“k”) => 21`
+- comparison
+    - `hello == goodbye`
+    - `hello.eql? goodbye`
+    - `“a” <=> “v”` // spaceship operator 🤪
+- substitute
+    - `“That’s alll fokes”.gsub “alll”, “all”`
 
+    
+### Ruby - Block
+- bag of codes
+- always enclosed within braces `{ }`
+- similar idea in other language, e.g. lambda, closure...
+
+```ruby
+    block_name {
+        statement1
+        statement2
+        ...
+    }
+```
+
+e.g.
+
+```ruby
+class Hello
+    def test
+         puts “you are in the method”
+         yield
+         puts “you are again back inside the method”
+    end
+end
+```
 
