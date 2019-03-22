@@ -20,3 +20,17 @@
 - `rails db:migrate`
 - `rails server`
 
+---
+
+### Micropost
+- `rails generate scaffold Micropost content:text user_id:integer`
+- `rails db:migrate`
+- config/routes.rb
+- app/models/micropost.rb
+    - `validates :content, length: { maximum: 140 }, presence: true`
+    - `belongs_to :user`
+- app/models/user.rb
+    - `has_many :microposts`
+    - `validates :name, presence: true`
+    - `validates :email, presence: true`
+
