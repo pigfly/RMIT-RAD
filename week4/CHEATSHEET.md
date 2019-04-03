@@ -1,6 +1,84 @@
 ## Week 4 CHEATSHEET
 
+### 5.0.0
+- app/helpers/application_helper.rb
+
+```rails
+module ApplicationHelper
+
+  # Returns the full title on a per-page basis.
+  def full_title(page_title = '')
+    base_title = "Ruby on Rails Tutorial Sample App"
+    if page_title.empty?
+      base_title
+    else
+      page_title + " | " + base_title
+    end
+  end
+end
+```
+
+- app/views/layouts/application.html.erb
+
+```rails
+<title><%= full_title(yield(:title)) %></title>
+```
+
 ### 5.1.1
+- app/views/layouts/application.html.erb
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "sample app", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   '#' %></li>
+            <li><%= link_to "Help",   '#' %></li>
+            <li><%= link_to "Log in", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
+```
+- app/views/static_pages/home.html.erb
+
+```html
+<div class="center jumbotron">
+  <h1>Welcome to the Sample App</h1>
+
+  <h2>
+    This is the home page for the
+    <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+    sample application.
+  </h2>
+
+  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails logo"),
+            'http://rubyonrails.org/' %>
+```
+
 - `curl -OL cdn.learnenough.com/kitten.jpg`
 - `mv` command, move kitten.jpg to the correct asset directory for images (Section 5.2.1).
     - `mv kitten.jpg app/assets/images/`
@@ -12,6 +90,9 @@
 ```
 
 ###  5.1.2
+- Gemfile
+    - `gem 'bootstrap-sass', '3.3.7'`
+    - `bundle install`
 - adding the CSS in Listing 5.11 to custom.scss, hide all images in the application
     - `<%#= image_tag("kitten.jpg", alt: "Kitten") %>` 
 
@@ -42,6 +123,8 @@ img {
 ```
 
 ### 5.2.2
+- `touch app/assets/stylesheets/custom.scss`
+
 ```css
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -141,6 +224,29 @@ footer {
     }
   }
 }
+```
+
+### Partials
+- app/views/layouts/application.html.erb
+
+```rails
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
 ```
 
 ### 5.3.2
