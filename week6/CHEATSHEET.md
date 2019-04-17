@@ -16,12 +16,12 @@ id: 1
 name: Example User
 email: user@example.com
 created_at: !ruby/object:ActiveSupport::TimeWithZone
-  utc: &1 2018-01-21 04:05:46.891622000 Z
+  utc: &1 2019-01-21 04:05:46.891622000 Z
   zone: &2 !ruby/object:ActiveSupport::TimeZone
     name: Etc/UTC
   time: *1
 updated_at: !ruby/object:ActiveSupport::TimeWithZone
-  utc: &3 2018-01-21 04:05:46.891622000 Z
+  utc: &3 2019-01-21 04:05:46.891622000 Z
   zone: *2
   time: *3
 password_digest: "$2a$10$Nzw7IByN9Y23cUP3zPf/SOpcGTvPoOlN.eYPlF2ayRYPL6tgpfnje"
@@ -32,12 +32,12 @@ id: 1
 name: Example User
 email: user@example.com
 created_at: !ruby/object:ActiveSupport::TimeWithZone
-  utc: &1 2018-01-21 04:05:46.891622000 Z
+  utc: &1 2019-01-21 04:05:46.891622000 Z
   zone: &2 !ruby/object:ActiveSupport::TimeZone
     name: Etc/UTC
   time: *1
 updated_at: !ruby/object:ActiveSupport::TimeWithZone
-  utc: &3 2018-01-21 04:05:46.891622000 Z
+  utc: &3 2019-01-21 04:05:46.891622000 Z
   zone: *2
   time: *3
 password_digest: "$2a$10$Nzw7IByN9Y23cUP3zPf/SOpcGTvPoOlN.eYPlF2ayRYPL6tgpfnje"
