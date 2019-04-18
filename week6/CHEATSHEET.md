@@ -9,7 +9,7 @@
 ```ruby
 >> user = User.first 
   User Load (0.5ms)  SELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]
-=> #<User id: 1, name: "Example User", email: "user@example.com", created_at: "2018-01-21 04:05:46", updated_at: "2018-01-21 04:05:46", password_digest: "$2a$10$Nzw7IByN9Y23cUP3zPf/SOpcGTvPoOlN.eYPlF2ayRY...">
+=> #<User id: 1, name: "Example User", email: "alex.jiang@g.com", created_at: "2018-01-21 04:05:46", updated_at: "2018-01-21 04:05:46", password_digest: "$2a$10$Nzw7IByN9Y23cUP3zPf/SOpcGTvPoOlN.eYPlF2ayRY...">
 >> puts user.attributes.to_yaml
 ---
 id: 1
