@@ -46,3 +46,78 @@
 6. rake db:test:prepare makes sure that the test database schema has the proper migrations. If you have pending migrations, this command will warn you appropriately.
 
 
+### Functional Tests
+In the example below, I am designing a webservice to help me add numbers together. It will behave roughly like this:
+
+```html
+Request:
+GET /add?num1=2&num2=4
+
+Response:
+200
+Content-Type: text/plain
+6
+```
+
+In the case that the input is invalid, it should return with a “400” Bad Request status code.
+
+Here are the tests describing the behaviour of this web service:
+
+```ruby
+class MathControllerTest < ActionController::TestCase
+  test "add when input is correct" do
+      get :add, { 'num1' => -2, 'num2' => 4}
+      assert_response 200
+      assert_equal "2", @response.body
+      assert_equal "text/plain", @response.content_type
+  end
+  test "add should return 400 when params invalid" do
+      get :add, {'num2' => 'blah'}
+      assert_response 400
+  end
+end
+```
+
+Note that like the Unit test cases, functional test cases are subclasses of `“ActionController::TestCase”`. However, Rails magically gives you access to some request/response functions and variables:
+
+- Functions
+    - `get`
+    - `post`
+    - `put`
+    - `head`
+- Hashes
+    - `assign`: Any objects that are stored as instance variables for use in views.
+    - `cookies`: Any cookies that are set.
+    - `flash`: Any objects living in the flash.
+    - `session`: Any object living in session variables.
+- Variables:
+    - `@controller`: The controller processing the request (the object, not the class)
+    - `@request`: The most recent request
+    - `@response`:   The most recent response
+
+Here is the completed web service:
+
+```ruby
+class MathController < ApplicationController
+  def add
+      begin
+          n1 = Integer(params[:num1])
+          n2 = Integer(params[:num2])
+          render :text => (n1+n2).to_s,
+:content_type => "text/plain"
+      rescue
+          render :status => 400, :text => "Invalid Input"
+      end
+  end
+end
+```
+
+And the routes:
+
+```ruby
+FunctionalTestExample::Application.routes.draw do
+  match "add" => "math#add"
+end
+```
+
+
