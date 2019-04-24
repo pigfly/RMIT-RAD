@@ -74,7 +74,7 @@ $ rails routes | grep 'sessions#' | wc -l
 => 1
 >> @current_user ||= User.find_by(id: session[:user_id])
   User Load (0.5ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
-=> #<User id: 1, name: "Rails Tutorial", email: "example@railstutorial.org", created_at: "2018-01-21 21:24:43", updated_at: "2018-01-21 21:24:43", password_digest: "$2a$10$pYeW./EatWhQgNsFlkE1nOIlUmjLPu9IjBLxQAYfjce...">
+=> #<User id: 1, name: "Rails Tutorial", email: "example@railstutorial.org", created_at: "2019-01-21 21:24:43", updated_at: "2019-01-21 21:24:43", password_digest: "$2a$10$pYeW./EatWhQgNsFlkE1nOIlUmjLPu9IjBLxQAYfjce...">
 >> @current_user ||= User.find_by(id: session[:user_id])
 => #<User id: 1, name: "Rails Tutorial", email: "example@railstutorial.org", created_at: "2018-01-21 21:24:43", updated_at: "2018-01-21 21:24:43", password_digest: "$2a$10$pYeW./EatWhQgNsFlkE1nOIlUmjLPu9IjBLxQAYfjce...">
 ```
