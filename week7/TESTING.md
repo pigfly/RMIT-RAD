@@ -23,7 +23,6 @@
     >> rails db:migrate
     >> vim test/unit/hello_test.rb
     >>
-    require 'test_helper'
     
         class HelloTest < ActiveSupport::TestCase
             test "the truth" do
