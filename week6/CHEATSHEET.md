@@ -9,7 +9,7 @@
 ```ruby
 >> user = User.first 
   User Load (0.5ms)  SELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1  [["LIMIT", 1]]
-=> #<User id: 1, name: "Example User", email: "alex.jiang@g.com", created_at: "2018-01-21 04:05:46", updated_at: "2018-01-21 04:05:46", password_digest: "$2a$10$Nzw7IByN9Y23cUP3zPf/SOpcGTvPoOlN.eYPlF2ayRY...">
+=> #<User id: 1, name: "Example User", email: "alex.jiang@g.com", created_at: "2019-01-21 04:05:46", updated_at: "2019-01-21 04:05:46", password_digest: "$2a$10$Nzw7IByN9Y23cUP3zPf/SOpcGTvPoOlN.eYPlF2ayRY...">
 >> puts user.attributes.to_yaml
 ---
 id: 1
@@ -66,7 +66,7 @@ Current Time: <%= Time.now %>.
 
 
 ```
-Started GET "/users/1" for 127.0.0.1 at 2018-01-20 23:20:03 -0500
+Started GET "/users/1" for 127.0.0.1 at 2019-01-20 23:20:03 -0500
 Processing by UsersController#show as HTML
   Parameters: {"id"=>"1"}
   User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
@@ -96,7 +96,7 @@ nil
 2.
 
 ```
-Started GET "/users/new" for 127.0.0.1 at 2018-01-20 23:22:43 -0500
+Started GET "/users/new" for 127.0.0.1 at 2019-01-20 23:22:43 -0500
 Processing by UsersController#new as HTML
 Return value is: nil
 
@@ -189,7 +189,7 @@ end
   User Load (0.5ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2  [["id", 2], ["LIMIT", 1]]
 => #<User id: 2, name: "alex jiang", email: "alex.jiang@g.com", created_at: "2019-01-21 21:06:43", updated_at: "2019-01-21 21:06:43", password_digest: "$2a$10$7jQSCRZ4z8h0eBRnqWYk5.8r4ZFzUKuYvFylU/gxCVt...">
 >> user.attributes                                                         
-=> {"id"=>2, "name"=>"alex jiang", "email"=>"alex.jiang@g.com", "created_at"=>Sun, 21 Jan 2018 21:06:43 UTC +00:00, "updated_at"=>Sun, 21 Jan 2018 21:06:43 UTC +00:00, "password_digest"=>"$2a$10$7jQSCRZ4z8h0eBRnqWYk5.8r4ZFzUKuYvFylU/gxCVt0ypb6DRime"}
+=> {"id"=>2, "name"=>"alex jiang", "email"=>"alex.jiang@g.com", "created_at"=>Sun, 21 Jan 2019 21:06:43 UTC +00:00, "updated_at"=>Sun, 21 Jan 2019 21:06:43 UTC +00:00, "password_digest"=>"$2a$10$7jQSCRZ4z8h0eBRnqWYk5.8r4ZFzUKuYvFylU/gxCVt0ypb6DRime"}
 ```
 
 2. Verified that by updating **Listing 7.28** and submitting a valid user that `redirect_to user_url(@user)` has the same effect as `redirect_to @user`.
