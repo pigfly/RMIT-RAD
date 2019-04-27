@@ -208,10 +208,6 @@ end
 <div class="<%= "alert alert-#{message_type}" %>">
 ```
 
-### Section 7.4.3
-1. Verified the user was successfully created as in **Listing 7.32**.
-2. Verified that the Gravatar correctly appear for a new user created with my personal email address.
-
 ### Section 7.4.4
 1. The line `assert_not flash.empty?` was added to the bottom of the signup validity test.
 2. All tests still pass after implementing the change in **Listing 7.35**.
