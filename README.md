@@ -14,5 +14,6 @@ TL; DR;
 6. [week5](https://github.com/pigfly/RMIT-RAD/tree/master/week5) (CHEATSHEET✅, RAILS🛤, RUBY💎)
 7. [week6](https://github.com/pigfly/RMIT-RAD/tree/master/week6) (CHEATSHEET✅, RAILS🛤, RUBY💎)
 8. [week7](https://github.com/pigfly/RMIT-RAD/tree/master/week7) (CHEATSHEET✅, RAILS🛤, RUBY💎)
+9. [week8](https://github.com/pigfly/RMIT-RAD/tree/master/week8) (CHEATSHEET✅, RAILS🛤, RUBY💎)
 
 
