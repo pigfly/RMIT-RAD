@@ -34,3 +34,38 @@
 >> 
 ```
 
+3.
+![double logout error](https://raw.githubusercontent.com/pigfly/RMIT-RAD/master/week8/img/1.png)
+
+![double browser logout error](https://raw.githubusercontent.com/pigfly/RMIT-RAD/master/week8/img/2.png)
+
+Uncommenting the fixes does change the test suite from red to green:
+
+```ruby
+Finished in 0.54743s
+24 tests, 68 assertions, 0 failures, 0 errors, 0 skips
+...
+Finished in 0.578573s, 41.4814 runs/s, 117.5305 assertions/s.
+24 runs, 68 assertions, 0 failures, 0 errors, 0 skips
+```
+
+### Section 9.2
+1. The checkbox is having its intended effect; checking it adds both a `remember_token` and a `user_id` cookie to the browser, and not checking it adds neither.
+2.
+```ruby
+>> 1 == 2 ? 'no way' : 'phew!'
+=> "phew!"
+>> 2 == 2 ? 'that\'s better' : 'not gonna happen'
+=> "that's better"
+```
+
+### Section 9.3.2
+1. The test fails with the `authenticated?` part of the expression removed:
+
+```ruby
+Failure:
+SessionsHelperTest#test_current_user_returns_nil_when_remember_digest_is_wrong [/Users/alex/environment/sample_app/test/helpers/sessions_helper_test.rb:17]:
+Expected #<User id: 208889123, name: "Foo Bar", email: "foo@bar.com", created_at: "2019-02-03 15:42:48", updated_at: "2019-02-03 15:42:48", password_digest: "$2a$04$vpjPuDJWYiardb28TO1/yet4Tx6XudLZ.rjnrhDAEDK...", remember_digest: "$2a$04$pMwZWHcZ8RtD7o5M13M6ielnjUKyCf0P/.GvKlRqVK5..."> to be nil.
+```
+
+
