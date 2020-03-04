@@ -1,5 +1,9 @@
 ## RMIT Rapid 🚀 Application Development
 
+### Semester 1 2020
+
+1. [week0](./2020_s1/bootstrap/) (README✅, DOCKER🐳, RAILS🛤)
+
 ### Semester 1 2019
 
 TL; DR;
