@@ -25,4 +25,5 @@ test:
 
 4. `docker-compose up`
 5. `docker-compose run web rake db:create`
-6. `docker-compose down`
+6. hit `http://localhost:3000`
+7. `docker-compose down`
