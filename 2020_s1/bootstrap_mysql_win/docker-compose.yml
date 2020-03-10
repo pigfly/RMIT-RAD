@@ -1,0 +1,26 @@
+# docker-compose.yml
+version: '2'
+
+services:
+  web:
+    build: .
+    command: bash -c "bundle && bundle exec rake db:create db:migrate db:seed && bundle exec rails s -b 0.0.0.0"
+    volumes:
+      - .:/railsapp
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:5.7
+    command: mysqld --character-set-server=utf8
+    ports:
+      - 3306:3306
+    restart: always
+    volumes: 
+      - ../docker/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: template_development
+      MYSQL_USER: alex
+      MYSQL_PASSWORD: password
