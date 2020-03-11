@@ -4,7 +4,9 @@ services:
     image: postgres
     environment: 
       POSTGRES_USER: 'alex'
-      POSTGRES_HOST_AUTH_METHOD: trust
+    # Exposing DB to port `54321` of host machine
+    ports:
+      - "54321:5432"
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
   web:
@@ -12,7 +14,9 @@ services:
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/myapp
+    # Exposing WEB to port `3001` of host machine
     ports:
-      - "3000:3000"
+      - "3001:3000"
     depends_on:
       - db
+  
