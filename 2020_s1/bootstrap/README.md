@@ -1,29 +1,25 @@
-### CHEATSHEET
+## Building the rails App
 
-1. `docker-compose run web rails new . --force --no-deps --database=postgresql`
-2. `docker-compose build`
-3. `config/database.yml`
+1. Run `docker-compose build` after every Gemfile change or to build the containers
 
-```yml
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  host: db
-  username: alex
-  password:
-  pool: 5
+## Running the rails App
+1. Run `docker-compose up` to run the rails app
+2. hit `http://0.0.0.0:3000`
 
-development:
-  <<: *default
-  database: myapp_development
+## Debugging the Rails App
 
+1. Add `binding.pry` or `byebug` in your code where you want to put the breakpoint.
+2. Run `docker-compose run --service-port --rm web` in your console to run the rails app in Debug mode
+3. Access the endpoint you are debugging to go into debugging mode in pry or byebug
 
-test:
-  <<: *default
-  database: myapp_test
-```
+## Rails CHEATSHEET using docker
 
-4. `docker-compose up`
-5. `docker-compose run web rake db:create`
-6. hit `http://localhost:3000`
-7. `docker-compose down`
+1. `docker-compose run --rm web rails new . --force --no-deps --database=postgresql`
+2. `docker-compose run --rm web bundle install`
+3. `docker-compose run --rm web bundle update`
+4. `docker-compose run --rm web rails db:create`
+5. `docker-compose run --rm web rails db:migrate`
+6. `docker-compose run --rm web rails db:drop`
+7. `docker-compose run --rm web rails assets:precompile`
+8. `docker-compose run --rm web rails console`
+9. `docker-compose run --rm web rails test`

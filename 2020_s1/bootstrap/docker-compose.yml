@@ -3,18 +3,28 @@ services:
   db:
     image: postgres
     environment: 
-      POSTGRES_USER: 'alex'
-      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: 'admin'
+      POSTGRES_PASSWORD: 'password'
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+      - postgres:/data/postgres
   web:
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
-    volumes:
-      - .:/myapp
+    tty: true
+    stdin_open: true
     ports:
       - "3000:3000"
     depends_on:
       - db
-    tty: true
-    stdin_open: true
+    environment:
+      DATABASE_HOST: "db"
+      DATABASE_USERNAME: "admin"
+      DATABASE_PASSWORD: "password"
+      DATABASE_PORT: 5432
+    volumes:
+      - .:/myapp:delegated
+      - bundle:/usr/local/bundle
+      - cache:/myapp/tmp/cache
+volumes:
+  postgres:
+  cache:
+  bundle:
