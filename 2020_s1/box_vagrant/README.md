@@ -7,4 +7,3 @@
 1. clone this repo
 2. `cd box_vagrant`
 3. `vagrant plugin install vagrant-vbguest`
-4. `vagrant plugin install vagrant-librarian-chef-nochef`
