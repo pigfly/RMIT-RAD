@@ -3,20 +3,31 @@ services:
   db:
     image: postgres
     environment: 
-      POSTGRES_USER: 'alex'
-    # Exposing DB to port `54321` of host machine
+      POSTGRES_USER: 'admin'
+      POSTGRES_PASSWORD: 'password'
+    # Exposing DB to port `5432` of host machine
     ports:
-      - "54321:5432"
+      - "5432:5432"
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+      - postgres:/data/postgres
   web:
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
-    volumes:
-      - .:/myapp
-    # Exposing WEB to port `3001` of host machine
+    tty: true
+    stdin_open: true
     ports:
-      - "3001:3000"
+      - "3000:3000"
     depends_on:
       - db
-  
+    environment:
+      DATABASE_HOST: "host.docker.internal"
+      DATABASE_USERNAME: "admin"
+      DATABASE_PASSWORD: "password"
+      DATABASE_PORT: 5432
+    volumes:
+      - .:/myapp:delegated
+      - bundle:/usr/local/bundle
+      - cache:/myapp/tmp/cache
+volumes:
+  postgres:
+  cache:
+  bundle:

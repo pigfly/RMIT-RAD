@@ -1,11 +1,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # `host.docker.internal` returns the IP address of the host machine
-  host: host.docker.internal
-  port: 54321
-  username: alex
-  password:
+  host: <%= ENV["DATABASE_HOST"] %>
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  port: <%= ENV["DATABASE_PORT"] %>
   pool: 5
 
 development:

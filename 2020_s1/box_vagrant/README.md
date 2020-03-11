@@ -6,6 +6,5 @@
 0. https://www.vagrantup.com/, https://www.virtualbox.org/
 1. clone this repo
 2. `cd box_vagrant`
-3. `vagrant up`
-4. `vagrant ssh`
-5. `bin/rails server -b 0.0.0.0`
+3. `vagrant plugin install vagrant-vbguest`
+4. `vagrant up`
