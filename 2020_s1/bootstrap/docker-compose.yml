@@ -5,6 +5,9 @@ services:
     environment: 
       POSTGRES_USER: 'admin'
       POSTGRES_PASSWORD: 'password'
+    # Exposing DB to port `5432` of host machine
+    ports:
+      - "5432:5432"
     volumes:
       - postgres:/data/postgres
   web:
@@ -16,7 +19,7 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_HOST: "db"
+      DATABASE_HOST: "host.docker.internal"
       DATABASE_USERNAME: "admin"
       DATABASE_PASSWORD: "password"
       DATABASE_PORT: 5432
