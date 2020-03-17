@@ -3,6 +3,9 @@
 ### Semester 1 2020
 
 1. [week0](./2020_s1/bootstrap/) (README✅, DOCKER🐳, RAILS🛤)
+2. [week1](./2020_s1/box_vagrant/) (README✅, VBOX📦)
+3. [week2](./2020_s1/week2/) (README✅, RAILS🛤, RUBY💎)
+
 
 ### Semester 1 2019
 
