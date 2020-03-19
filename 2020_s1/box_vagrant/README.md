@@ -6,10 +6,11 @@
 ## Building the Vagrant Enviornment
 0. https://www.vagrantup.com/, https://www.virtualbox.org/
 1. clone this repo 
-2. Run `cd 2020_s1/box_vagrant/box_vagrant`
+2. Run `cd 2020_s1/box_vagrant`
 3. Run `vagrant plugin install vagrant-vbguest` to install the plugin to link vagrant with virtualbox
-4. Run `vagrant up` to starts and provisions the vagrant environment
-5. Run `vagrant provision` to provisions the vagrant machine or if the step 1 fails to provision.
+4. create a folder called *app* under 2020_s1/box_vagrant
+5. Run `vagrant up` to starts and provisions the vagrant environment
+6. Run `vagrant provision` to provisions the vagrant machine or if the step 1 fails to provision.
 
 ## Accessing the Vagrant Environment
 1. Run `vagrant ssh` to ssh into the vagrant box
