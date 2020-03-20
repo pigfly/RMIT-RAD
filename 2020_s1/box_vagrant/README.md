@@ -3,12 +3,25 @@
 - **Do not use this box unless you have no choice !**
 - **Make sure your BIOS setting has hyper-V setting enabled**
 
-### Cheat Sheet
+## Building the Vagrant Enviornment
 0. https://www.vagrantup.com/, https://www.virtualbox.org/
-1. clone this repo
-2. `cd box_vagrant`
-3. `vagrant plugin install vagrant-vbguest`
-4. `vagrant up`
+1. clone this repo 
+2. Run `cd 2020_s1/box_vagrant`
+3. Run `vagrant plugin install vagrant-vbguest` to install the plugin to link vagrant with virtualbox
+4. create a folder called *app* under 2020_s1/box_vagrant
+5. Run `vagrant up` to starts and provisions the vagrant environment
+6. Run `vagrant provision` to provisions the vagrant machine or if the step 1 fails to provision.
+
+## Accessing the Vagrant Environment
+1. Run `vagrant ssh` to ssh into the vagrant box
+2. Run `cd /app` to access the app directory
+3. Run `gem install rails -v 5.2.4.1` to install rails
+4. Run `rails _5.2.4.1_ new . --force --no-deps --database=postgresql` to install a fresh rails app
+5. Run `bundle install` to install all dependency gems
+6. Run `rails db:create` to create database
+7. Run `rails s -b 0.0.0.0 -p 3000` to run rails server
+2. hit `http://0.0.0.0:3000`
+
 
 ### VirtualBox Guide
 1. Download Virtual Box https://www.virtualbox.org/
