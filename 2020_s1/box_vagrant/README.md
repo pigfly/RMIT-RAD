@@ -30,3 +30,14 @@
 4. Import RAD2020.ova through VB (Do not create)
 5. Start RAD2020
 6. password: 123456 
+
+### Cheat Sheet
+- docker
+  - `docker-compose run --rm --service-port web bash`
+  - `exit`
+  - `docker-compose down`
+- vagrant
+  - `vagrant up`
+  - `vagrant provision`
+  - `vagrant ssh`
+  - `vagrant destroy`
