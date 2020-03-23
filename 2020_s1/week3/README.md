@@ -31,3 +31,7 @@ test "should get about" do
     assert_response :success   
   end 
 ```
+
+11. `app/views/static_pages/home.html.erb`, `app/views/static_pages/help.html.erb`
+12. `config/routes.rb`
+13. `touch app/views/static_pages/about.html.erb`
