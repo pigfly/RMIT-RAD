@@ -13,4 +13,8 @@
 10. `gemfile`, `bundle install`
 11. `touch app/assets/stylesheets/custom.scss`
 12. `restart rails server`
-13. 
+13. `update app/assets/stylesheets/custom.scss`
+14. `app/views/layouts/application.html.erb`
+15. `app/views/layouts/_shim.html.erb`, `app/views/layouts/_header.html.erb`
+16. `app/views/layouts/application.html.erb`
+17. `app/assets/stylesheets/custom.scss`
