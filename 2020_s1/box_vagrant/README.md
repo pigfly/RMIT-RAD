@@ -34,6 +34,7 @@
 ### Cheat Sheet
 - docker
   - `docker-compose run --rm --service-port web bash`
+  - `rails s -b 0.0.0.0`
   - `exit`
   - `docker-compose down`
 - vagrant
