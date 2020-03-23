@@ -1,0 +1,33 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment: 
+      POSTGRES_USER: 'admin'
+      POSTGRES_PASSWORD: 'password'
+    # Exposing DB to port `5432` of host machine
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres:/data/postgres
+  web:
+    build: .
+    tty: true
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_HOST: "host.docker.internal"
+      DATABASE_USERNAME: "admin"
+      DATABASE_PASSWORD: "password"
+      DATABASE_PORT: 5432
+    volumes:
+      - .:/myapp:delegated
+      - bundle:/usr/local/bundle
+      - cache:/myapp/tmp/cache
+volumes:
+  postgres:
+  cache:
+  bundle:
