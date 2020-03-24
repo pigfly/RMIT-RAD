@@ -49,3 +49,4 @@
 - `System Preferences > Security & Privacy > Privacy > Full Disk Access`
   - `Command-Shift-G.`
   - `/sbin/nfsd`
+- `System Preferences > Security & Privacy > Privacy > Grant Vagrant Kext`
