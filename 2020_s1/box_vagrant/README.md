@@ -42,3 +42,7 @@
   - `vagrant provision`
   - `vagrant ssh`
   - `vagrant destroy`
+
+### Mac
+- `sudo /Library/Application\ Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh restart`
+- `sudo launchctl load /Library/LaunchDaemons/org.virtualbox.startup.plist`
