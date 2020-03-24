@@ -46,3 +46,6 @@
 ### Mac
 - `sudo /Library/Application\ Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh restart`
 - `sudo launchctl load /Library/LaunchDaemons/org.virtualbox.startup.plist`
+- `System Preferences > Security & Privacy > Privacy > Full Disk Access`
+  - `Command-Shift-G.`
+  - `/sbin/nfsd`
