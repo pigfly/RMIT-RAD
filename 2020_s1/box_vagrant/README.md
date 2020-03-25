@@ -41,7 +41,7 @@
   - `vagrant up`
   - `vagrant provision`
   - `vagrant ssh`
-  - `vagrant destroy`
+  - `vagrant halt`
 
 ### Mac
 - `sudo /Library/Application\ Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh restart`
