@@ -1,11 +1,10 @@
 ## Cheat Sheet
 
-1. `docker-compose build`
-2. `docker-compose up`
-3. `docker-compose run --rm web rails db:create`
-4. `docker-compose run web bundle show`
-5. `docker-compose run web bundle install --without production`
-6. `app/controllers/application_controller.rb`
+1. `docker-compose run --rm --service-port web bash`
+2. `rails db:create`
+3. `docker-compose run web bundle show`
+4. `docker-compose run web bundle install --without production`
+5. `app/controllers/application_controller.rb`
 
 ```ruby
 protect_from_forgery with: :exception
