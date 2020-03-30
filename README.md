@@ -6,6 +6,8 @@
 2. [week1](./2020_s1/box_vagrant/) (README✅, VBOX📦)
 3. [week2](./2020_s1/week2/) (README✅, RAILS🛤, RUBY💎)
 4. [week3](./2020_s1/week3/) (README✅, RAILS🛤, RUBY💎)
+5. [week4](./2020_s1/week4/) (README✅, RAILS🛤, RUBY💎)
+6. [week5](./2020_s1/week5/) (README✅, RAILS🛤, RUBY💎)
 
 
 ### Semester 1 2019
