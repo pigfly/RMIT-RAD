@@ -1,5 +1,9 @@
+require 'pry'
+
 class StaticPagesController < ApplicationController
   def home
+    binding.pry
+    puts "program resumes here"
   end
 
   def help
