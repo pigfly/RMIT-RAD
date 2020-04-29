@@ -8,7 +8,8 @@
 4. [week3](./2020_s1/week3/) (README✅, RAILS🛤, RUBY💎)
 5. [week4](./2020_s1/week4/) (README✅, RAILS🛤, RUBY💎)
 6. [week5](./2020_s1/week5/) (README✅, RAILS🛤, RUBY💎)
-7. [week6](./2020_s1/docker/) (README✅, DOCKER🐳, VAGRANT📦) 
+7. [week6](./2020_s1/docker/) (README✅, DOCKER🐳, VAGRANT📦)
+8. [week7](./2020_s1/week7/) (README✅)
 
 
 ### Semester 1 2019
