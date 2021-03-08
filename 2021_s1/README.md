@@ -1,7 +1,7 @@
 # Rails + C9 Setup
 - We strongly encourage you to use C9 for bootstrap your development environment
   - Sign up and enjoy AWS Free Tier for 12 months: https://aws.amazon.com/free/
-- If you wish to use docker for local environment, checkout the previous docs: ../2022_s1/bootstrap
+- If you wish to use docker for local environment, checkout the previous docs: https://github.com/pigfly/RMIT-RAD/tree/master/2020_s1/bootstrap
 
 ## Workspace settings
 When creating a Cloud9 Environment, use Ubuntu not Amazon Linux
